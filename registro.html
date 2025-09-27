@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - The Mechanics Industrial RG</title>
+  <link rel="shortcut icon" href="img/logo.jpeg" type="image/x-icon">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/estilo.css">
+  <style>
+    body {
+      background: #f4f6f9;
+      font-family: Arial, sans-serif;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      /* background: #343a40; */
+      padding: 10px;
+      margin: 0;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav ul li a:hover {
+      color: #ffc107;
+    }
+    .register-container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    footer {
+      background: #343a40;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 50px;
+    }
+    footer img {
+      width: 30px;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="ayuda.html">Información</a></li>
+      <li><a href="biografia.html">Biografía</a></li>
+      <li><a href="empresa.html">Acerca de</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="registro.html">Registro</a></li>
+    </ul>
+  </nav>
+
+  <!-- FORMULARIO -->
+  <div class="register-container">
+    <h2 class="text-center mb-4">Registro</h2>
+    <form id="formRegistro" method="post" action="">
+      <div class="mb-3">
+        <label for="name" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Escribe tu nombre" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Correo electrónico</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="ejemplo@email.com" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Crea una contraseña" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Registrarse</button>
+      <p id="warnings" class="text-danger mt-3 text-center"></p>
+    </form>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>Síguenos en nuestras redes</p>
+      <div>
+        <a href="#"><img src="img/fac.png" alt="Facebook"></a>
+        <a href="#"><img src="img/inst.png" alt="Instagram"></a>
+        <a href="#"><img src="img/twi.jpg" alt="Twitter"></a>
+        <a href="#"><img src="img/you.png" alt="YouTube"></a>
+      </div>
+      <p class="mt-3">Copyright © 2000-2022 Richard Miguel García Pérez. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Validación simple -->
+  <script>
+    const form = document.getElementById("formRegistro");
+    const warnings = document.getElementById("warnings");
+
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      warnings.textContent = "";
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      if (name.length < 3) {
+        warnings.textContent = "El nombre debe tener al menos 3 caracteres.";
+        return;
+      }
+      if (!email.includes("@") || !email.includes(".")) {
+        warnings.textContent = "Introduce un correo electrónico válido.";
+        return;
+      }
+      if (password.length < 6) {
+        warnings.textContent = "La contraseña debe tener al menos 6 caracteres.";
+        return;
+      }
+
+      form.submit(); // Envía el formulario si todo es correcto
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+/* ==========================
+   Estilos Generales
+========================== */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background-color: #f8f9fa;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+h1 {
+    font-size: 2.2rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+/* ==========================
+   Imágenes
+========================== */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+#f {
+    float: right;
+    max-width: 400px;
+    margin: 15px;
+}
+
+#e {
+    width: 200px;
+    margin: 10px;
+    display: inline-block;
+}
+
+#o {
+    width: 75px;
+    height: auto;
+}
+
+.ico, .ico1 {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.ico:hover, .ico1:hover {
+    transform: scale(1.1);
+}
+
+/* ==========================
+   Navegación
+========================== */
+nav {
+    background: linear-gradient(to right, #61045F, #AA076B);
+    padding: 12px 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 5px 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffccff;
+}
+
+/* ==========================
+   Footer
+========================== */
+.pie-pagina {
+    background: #444;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+}
+
+.pie-pagina .gru1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.pie-pagina .box {
+    margin: 10px;
+}
+
+.red-social a {
+    margin: 0 10px;
+}
+
+/* ==========================
+   Formularios
+========================== */
+form {
+    background: rgb(74, 21, 76);
+    padding: 30px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+    border-radius: 12px;
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+form .grupo {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+input {
+    background: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #AA076B;
+}
+
+label {
+    color: #ccc;
+    font-size: 14px;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    transition: 0.3s ease;
+}
+
+input:focus + label,
+input:valid + label {
+    top: -10px;
+    font-size: 12px;
+    color: #ffccff;
+}
+
+.warnings {
+    width: 100%;
+    text-align: center;
+    color: brown;
+    margin-top: 10px;
+}
+
+/* ==========================
+   Responsividad
+========================== */
+@media (max-width: 992px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #f {
+        float: none;
+        display: block;
+        margin: 20px auto;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .pie-pagina .gru1 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ico, .ico1 {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    form {
+        width: 90%;
+        padding: 20px;
+    }
+
+    #e {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
